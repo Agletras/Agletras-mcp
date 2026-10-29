@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔬 Agletras MCP
+# Agletras MCP
 
 **Local-first, zero-cost research infrastructure for AI agents.**
 
@@ -14,13 +14,13 @@ Turn a research question into a traceable, citation-validated report — with ex
 ![Local first](https://img.shields.io/badge/privacy-local--first-2DA44E)
 ![Version](https://img.shields.io/badge/version-0.2.0-blue)
 
-[Quick Start](#-quick-start) · [Features](#-what-you-get) · [Accuracy & Performance](#-accuracy--performance) · [Architecture](#-architecture) · [Tool Catalog](#-tool-catalog) · [Docs](#-documentation)
+[Quick Start](#quick-start) · [Features](#what-you-get) · [Accuracy & Performance](#accuracy--performance) · [Architecture](#architecture) · [Tool Catalog](#tool-catalog) · [Docs](#documentation)
 
 </div>
 
 ---
 
-## 🤔 Why Agletras?
+## Why Agletras?
 
 Most research agents stop at "the model wrote an answer." **Agletras keeps the evidence.**
 
@@ -30,40 +30,40 @@ Most research agents stop at "the model wrote an answer." **Agletras keeps the e
 | **Verification** | Trusts model output | 6 explicit statuses per claim |
 | **Conflicts** | Silently resolved | Both sides stored and visible |
 | **Storage** | Ephemeral | SQLite with full provenance |
-| **Cost** | API fees | **$0** — free search + free retrieval |
+| **Cost** | API fees | **\$0** — free search + free retrieval |
 | **Privacy** | Cloud-dependent | **100% local** — your data stays on disk |
 
 ---
 
-## ✨ What You Get
+## What You Get
 
 | Capability | Description |
 |---|---|
-| 🌐 **Source Collection** | Fetches web pages; extracts PDF, DOCX, XLSX, CSV/TSV, Markdown, plain text, and HTML with provenance and checksums |
-| 📚 **Evidence Library** | Splits content into stable passages with exact offsets and SHA-256 hashes; de-duplicates by canonical identity |
-| 🔗 **Claims & Citations** | Links claims to exact passages; rejects fabricated quotations and cross-source mismatches |
-| ✅ **Verification** | Deterministic claim-vs-passage checks with explicit status, method, confidence, and limitations |
-| 📝 **Synthesis Reports** | Structured Markdown with stable `[F#]`, `[Sn]`, and `[IMG#]` identifiers plus source-quality indicators |
-| 🔄 **Research Runs** | Plans subquestions, enforces limits, detects gaps, and stops predictably with remaining gaps visible |
-| 🖥️ **CLI & MCP** | Same workflow via `agletras` CLI and 38 MCP tools |
-| 🧠 **Memory & Monitoring** | Recalls stored evidence across runs; watches URLs or local files for meaningful changes |
-| 🖼️ **Image Research** | Searches Wikimedia Commons with real metadata; optional vision analysis |
+| **Source Collection** | Fetches web pages; extracts PDF, DOCX, XLSX, CSV/TSV, Markdown, plain text, and HTML with provenance and checksums |
+| **Evidence Library** | Splits content into stable passages with exact offsets and SHA-256 hashes; de-duplicates by canonical identity |
+| **Claims & Citations** | Links claims to exact passages; rejects fabricated quotations and cross-source mismatches |
+| **Verification** | Deterministic claim-vs-passage checks with explicit status, method, confidence, and limitations |
+| **Synthesis Reports** | Structured Markdown with stable `[F#]`, `[Sn]`, and `[IMG#]` identifiers plus source-quality indicators |
+| **Research Runs** | Plans subquestions, enforces limits, detects gaps, and stops predictably with remaining gaps visible |
+| **CLI & MCP** | Same workflow via `agletras` CLI and 38 MCP tools |
+| **Memory & Monitoring** | Recalls stored evidence across runs; watches URLs or local files for meaningful changes |
+| **Image Research** | Searches Wikimedia Commons with real metadata; optional vision analysis |
 
 ---
 
-## 📐 Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
-    Q["🔍 Research Question"] --> A["🤖 Agent or CLI"]
-    A --> P["📋 Plan & Subquestions"]
-    P --> S["🌐 Search, Fetch & Local Docs"]
-    S --> E[("🗄️ SQLite Evidence Store")]
-    E --> X["📄 Exact Passages & Hashes"]
-    X --> C["🔗 Claims & Citations"]
-    C --> V["✅ Verification & Conflicts"]
-    V --> R["📝 Validated Markdown Report"]
-    R --> L["📊 Execution Log & State"]
+    Q["Research Question"] --> A["Agent or CLI"]
+    A --> P["Plan & Subquestions"]
+    P --> S["Search, Fetch & Local Docs"]
+    S --> E[("SQLite Evidence Store")]
+    E --> X["Exact Passages & Hashes"]
+    X --> C["Claims & Citations"]
+    C --> V["Verification & Conflicts"]
+    V --> R["Validated Markdown Report"]
+    R --> L["Execution Log & State"]
 
     style Q fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
     style E fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -71,16 +71,16 @@ flowchart TD
     style V fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
 ```
 
-### Research Pipeline — Step by Step
+### Research Pipeline
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant U as 👤 User
-    participant A as 🤖 Agent / CLI
-    participant S as 🔬 Agletras
-    participant W as 🌐 Web & Docs
-    participant D as 🗄️ SQLite
+    participant U as User
+    participant A as Agent / CLI
+    participant S as Agletras
+    participant W as Web & Docs
+    participant D as SQLite
 
     U->>A: Ask a research question
     A->>S: start_research_run + save_research_plan
@@ -97,7 +97,7 @@ sequenceDiagram
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -169,9 +169,9 @@ opencode run --agent research-orchestrator --auto \
 
 ---
 
-## 📊 Accuracy & Performance
+## Accuracy & Performance
 
-> **Measured results** from the repository's offline evaluation script — not estimates.  
+> **Measured results** from the repository's offline evaluation script — not estimates.
 > See [`docs/phase8-measurements.md`](docs/phase8-measurements.md) for the full table and reproduction steps.
 
 ### Retrieval Accuracy
@@ -182,7 +182,7 @@ opencode run --agent research-orchestrator --auto \
 
 ```mermaid
 xychart-beta
-    title "Memory Retrieval: Precision@5 & Recall@5 per Topic"
+    title "Memory Retrieval — Precision@5 and Recall@5 per Topic"
     x-axis ["Heliotrope", "Obsidian", "Quartzite", "Marlin", "Pelican", "Tundra"]
     y-axis "Score" 0 --> 1.1
     bar [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -208,15 +208,15 @@ xychart-beta
 xychart-beta
     title "Parallel vs Sequential Execution (4 workers)"
     x-axis ["Sleep Tasks", "URL Fetch", "Monitor Check"]
-    y-axis "Speedup (×)" 0 --> 5
+    y-axis "Speedup (x)" 0 --> 5
     bar [3.97, 3.74, 2.87]
 ```
 
 | Workload | Sequential | Parallel | Speedup |
 |---|:---:|:---:|:---:|
-| 8 sleep tasks | 0.802 s | 0.202 s | **3.97×** |
-| 8 URLs (0.12 s latency) | 1.074 s | 0.287 s | **3.74×** |
-| 6 monitor targets | 0.797 s | 0.278 s | **2.87×** |
+| 8 sleep tasks | 0.802 s | 0.202 s | **3.97x** |
+| 8 URLs (0.12 s latency) | 1.074 s | 0.287 s | **3.74x** |
+| 6 monitor targets | 0.797 s | 0.278 s | **2.87x** |
 
 ### Claim Verification Outcomes
 
@@ -239,9 +239,9 @@ pie title Verification Outcomes (51 Claims)
 |---|---|
 | Memory precision@5 | **1.00** (6/6 topics) |
 | Memory recall@5 | **1.00** (6/6 topics) |
-| Best parallel speedup | **3.97×** (8 tasks, 4 workers) |
+| Best parallel speedup | **3.97x** (8 tasks, 4 workers) |
 | Claim verification coverage | **51/51 claims** in one run |
-| Evidence reuse savings | **2 fetches saved** (2 → 0) |
+| Evidence reuse savings | **2 fetches saved** (2 to 0) |
 | Resume safety | 0 extra fetches on resume |
 | Monitoring false alerts | **0** of 6 targets |
 
@@ -254,7 +254,7 @@ python scripts/make_readme_assets.py
 
 ---
 
-## 🏷️ Claim Verification Statuses
+## Claim Verification Statuses
 
 The verification layer records what the evidence can establish — it does **not** predict truth.
 
@@ -277,89 +277,30 @@ stateDiagram-v2
 
 | Status | Meaning |
 |---|---|
-| 🟢 `SUPPORTED` | A stored passage directly establishes the claim |
-| 🟡 `PARTIALLY SUPPORTED` | Passage covers the claim but not every part |
-| 🔴 `CONTRADICTED` | Stored evidence disagrees with the claim |
-| 🟣 `CONFLICTING EVIDENCE` | Independent sources disagree with each other |
-| ⚪ `UNSUPPORTED` | No supporting passage was found |
-| ⬜ `UNVERIFIABLE` | Stored evidence cannot settle the claim |
+| `SUPPORTED` | A stored passage directly establishes the claim |
+| `PARTIALLY SUPPORTED` | Passage covers the claim but not every part |
+| `CONTRADICTED` | Stored evidence disagrees with the claim |
+| `CONFLICTING EVIDENCE` | Independent sources disagree with each other |
+| `UNSUPPORTED` | No supporting passage was found |
+| `UNVERIFIABLE` | Stored evidence cannot settle the claim |
 
 > Facts, inferences, and unverified statements stay in **separate report sections**. Conflicts remain visible with evidence on both sides.
 
 ---
 
-## 🧰 Tool Catalog
+## Tool Catalog
 
 The MCP server exposes **38 tools**. OpenCode prefixes them with the server name (e.g., `agletras_health_check`).
 
-```mermaid
-flowchart LR
-    subgraph Server["🌐 Server & Retrieval"]
-        direction TB
-        T1["health_check"]
-        T2["search_web"]
-        T3["fetch_url"]
-        T4["extract_pdf"]
-        T5["collect_sources"]
-        T6["collect_local_folder"]
-        T7["extract_document"]
-    end
-
-    subgraph Store["🗄️ Source Store"]
-        direction TB
-        T8["save_source"]
-        T9["get_source"]
-        T10["list_sources"]
-        T11["search_sources"]
-        T12["export_report"]
-        T13["stats"]
-    end
-
-    subgraph Evidence["📚 Evidence Library"]
-        direction TB
-        T14["start_research_run"]
-        T15["save_evidence"]
-        T16["search_evidence"]
-        T17["register_claim"]
-        T18["attach_citation"]
-        T19["get_claim_citations"]
-        T20["get_research_history"]
-        T21["generate_report"]
-        T22["validate_report"]
-    end
-
-    subgraph Planning["📋 Research Planning"]
-        direction TB
-        T23["save_research_plan"]
-        T24["update_subquestion"]
-        T25["log_run_event"]
-        T26["start_followup_round"]
-        T27["finish_research_run"]
-    end
-
-    subgraph Verify["✅ Verification & Synthesis"]
-        direction TB
-        T28["extract_claims"]
-        T29["verify_claims"]
-        T30["analyze_conflicts"]
-        T31["generate_markdown_report"]
-        T32["get_report"]
-    end
-
-    subgraph Images["🖼️ Images"]
-        direction TB
-        T33["search_images"]
-        T34["analyze_image"]
-    end
-
-    subgraph Memory["🧠 Memory & Monitoring"]
-        direction TB
-        T35["search_memory"]
-        T36["monitor_add_target"]
-        T37["monitor_check"]
-        T38["monitor_changes"]
-    end
-```
+| Group | Tools |
+|---|---|
+| **Server & Retrieval** | `health_check`, `search_web`, `fetch_url`, `extract_pdf`, `collect_sources`, `collect_local_folder`, `extract_document` |
+| **Source Store** | `save_source`, `get_source`, `list_sources`, `search_sources`, `export_report`, `stats` |
+| **Evidence Library** | `start_research_run`, `save_evidence`, `search_evidence`, `register_claim`, `attach_citation`, `get_claim_citations`, `get_research_history`, `generate_report`, `validate_report` |
+| **Research Planning** | `save_research_plan`, `update_subquestion`, `log_run_event`, `start_followup_round`, `finish_research_run` |
+| **Verification & Synthesis** | `extract_claims`, `verify_claims`, `analyze_conflicts`, `generate_markdown_report`, `get_report` |
+| **Images** | `search_images`, `analyze_image` |
+| **Memory & Monitoring** | `search_memory`, `monitor_add_target`, `monitor_check`, `monitor_changes` |
 
 ### CLI Commands
 
@@ -373,7 +314,7 @@ agletras ledger / workflows / security / improve
 
 ---
 
-## ⚡ At a Glance
+## At a Glance
 
 | | |
 |---|---|
@@ -383,13 +324,13 @@ agletras ledger / workflows / security / improve
 | **Documents** | PDF, DOCX, XLSX, CSV/TSV, Markdown, plain text, HTML |
 | **Runtime deps** | `mcp` and `pypdf` — two pure-Python packages |
 | **Python** | 3.11+ |
-| **Cost** | $0 |
+| **Cost** | \$0 |
 | **Credentials** | None required |
 | **Privacy** | Local-first; state stays on disk under your control |
 
 ---
 
-## 🔒 Data, Privacy & Safety
+## Data, Privacy & Safety
 
 - **Local state** — SQLite database, cache, and reports live under the project directory (`data/`, `cache/`, `reports/`) and are Git-ignored
 - **SSRF protection** — localhost, private, link-local, multicast, and shared addresses blocked by default (including redirects)
@@ -401,7 +342,7 @@ agletras ledger / workflows / security / improve
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 agletras-mcp/
@@ -409,7 +350,7 @@ agletras-mcp/
 │   ├── server.py              # MCP stdio server (38 tools)
 │   ├── cli.py                 # agletras command-line interface
 │   ├── pipeline.py            # End-to-end research pipeline
-│   ├── evidence.py            # Evidence library & citation tracking
+│   ├── evidence.py            # Evidence library and citation tracking
 │   ├── verification.py        # Claim verification engine
 │   ├── synthesis.py           # Report synthesis
 │   ├── search.py              # Web search adapters
@@ -431,7 +372,7 @@ agletras-mcp/
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 python -m unittest discover -s tests -t . -v
@@ -441,7 +382,7 @@ The test suite is **hermetic**: temporary home directories, local HTTP servers o
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 | Document | Contents |
 |---|---|
@@ -453,7 +394,7 @@ The test suite is **hermetic**: temporary home directories, local HTTP servers o
 
 ---
 
-## 🧭 Design Principles
+## Design Principles
 
 1. **Evidence before prose.** No report text is treated as a source.
 2. **Exactness over convenience.** Citations point at passages, not pages.
