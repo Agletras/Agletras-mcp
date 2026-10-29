@@ -394,6 +394,15 @@ The test suite is **hermetic**: temporary home directories, local HTTP servers o
 
 ---
 
+## Contributors
+
+| | Name | GitHub |
+|---|---|---|
+| <img src="https://github.com/drackyjr.png" width="50" height="50" style="border-radius:50%"> | **Dracky** | [@drackyjr](https://github.com/drackyjr) |
+| <img src="https://github.com/hrudyanshkayastha.png" width="50" height="50" style="border-radius:50%"> | **Hrudyansh Kayastha** | [@hrudyanshkayastha](https://github.com/hrudyanshkayastha) |
+
+---
+
 ## Design Principles
 
 1. **Evidence before prose.** No report text is treated as a source.
