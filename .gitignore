@@ -1,0 +1,35 @@
+# Virtual environments (created by the setup steps in README.md)
+.venv/
+.venv*/
+
+# Local research data (per-machine; never shared)
+data/
+reports/
+cache/
+
+# Secrets (never commit; only .env.example is tracked)
+.env
+.env.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs (runtime diagnostics; may contain local paths)
+logs/
+*.log
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

@@ -1,0 +1,134 @@
+# agletras-mcp — example TOML configuration file.
+#
+# Copy to $AGLETRAS_HOME/agletras.toml (or point AGLETRAS_CONFIG at it).
+# Every key is optional; omitted keys fall back to the built-in defaults.
+# Precedence: CLI flags > environment variables > this file > defaults.
+# Secrets are never stored here: API keys stay in environment variables
+# (see AGLETRAS_*_API_KEY_ENV) and are redacted from every output.
+
+# --- paths -------------------------------------------------------------------
+# All state lives under $AGLETRAS_HOME unless overridden here. Relative paths
+# resolve against the directory containing this file.
+[paths]
+data_dir = "data"
+reports_dir = "reports"
+cache_dir = "cache"
+logs_dir = "logs"
+# db_path = "data/research.db"
+# local_roots = ["samples"]   # additional dirs collect_local_folder may read
+
+# --- fetching ----------------------------------------------------------------
+[fetch]
+timeout = 20.0
+max_bytes = 10485760      # 10 MiB
+max_chars = 50000
+max_chars_cap = 500000
+max_redirects = 10
+user_agent = "agletras-mcp/0.2.0 (local zero-cost research tool)"
+
+# --- security policy ----------------------------------------------------------
+[security]
+# WARNING: allow_private_hosts=true lets the SSRF guard fetch loopback/private
+# addresses. Only enable for trusted local development (e.g. test fixtures).
+allow_private_hosts = false
+# allowed_domains = ["example.com"]   # allowlist; suffix match
+
+# --- web search ----------------------------------------------------------------
+[search]
+provider = "duckduckgo"    # duckduckgo | wikipedia
+# endpoint = ""            # override for tests/self-hosted mirrors
+min_interval = 2.0         # politeness pacing between searches
+max_results = 10           # hard ceiling for the max_results argument
+
+# --- PDF extraction -------------------------------------------------------------
+[pdf]
+max_bytes = 104857600     # 100 MiB
+max_pages = 200
+max_chars = 200000
+
+# --- storage listing -----------------------------------------------------------
+[storage]
+default_list_limit = 20
+max_list_limit = 200
+
+# --- collection pipeline (Phase 2) ----------------------------------------------
+[collect]
+concurrency = 4
+max_items = 50
+max_retries = 2
+backoff = 0.5
+doc_max_chars = 200000
+
+[folders]
+max_files = 200
+max_depth = 6
+max_file_bytes = 20971520  # 20 MiB
+office_max_cells = 20000
+
+# --- evidence library (Phase 3) ---------------------------------------------------
+[evidence]
+cache_ttl = 86400          # seconds; 0 disables expiry
+passage_chars = 1200
+fts = "auto"               # auto | off
+
+# --- images and vision (Phase 5) ----------------------------------------------------
+[images]
+search_provider = "wikimedia_commons"
+max_bytes = 10485760       # 10 MiB
+max_dimension = 4096
+max_results = 10
+vision_provider = "none"   # none | openai-compatible
+# vision_model = "nemotron-3.5-super-vl-free"
+# vision_model_endpoint = ""   # leave empty: analyze_image reports vision_unavailable
+# vision_api_key_env = "AGLETRAS_VISION_API_KEY"
+
+# --- claim verification and synthesis (Phase 6) --------------------------------------
+[verification]
+# model_endpoint = ""      # leave empty: deterministic checks only
+# model = "unspecified"
+# api_key_env = "AGLETRAS_VERIFICATION_API_KEY"
+max_claims = 50
+max_candidates = 8
+
+[reports]
+max_findings = 60
+
+# --- logging and the CLI research pipeline (Phase 7) ---------------------------------
+[logging]
+format = "human"           # human | json (progress lines on stderr)
+# file = ""                # append structured JSONL progress to this file
+
+[research]
+depth = "standard"         # quick | standard | thorough
+max_sources = 0            # 0 = preset default
+max_claims = 0             # 0 = preset default
+results_per_search = 0     # 0 = preset default
+searches_per_subquestion = 0  # 0 = preset default
+followup_rounds = -1       # -1 = preset, 0 = none, N = at most N
+verification_method = "auto"  # auto | deterministic
+include_images = false
+image_results = 3
+resume_max_age_days = 30   # refuse to resume runs whose last checkpoint is older
+reuse_max_age_days = 7     # max age of a stored copy `--reuse-evidence` may link
+
+# --- profiles and branding (Phase 8) ---------------------------------------------
+# Named option presets: `agletras run ... --profile NAME` (explicit CLI flags win
+# over the profile, the profile wins over the [research] settings above).
+# Valid profile keys: depth, max_sources, max_claims, searches_per_subquestion,
+# followup_rounds, results_per_search, verification_method, include_images,
+# image_results, parallel, reuse_evidence, project, title.
+#[profiles.quick]
+#depth = "quick"
+#max_sources = 4
+#
+#[profiles.weekly]
+#depth = "standard"
+#parallel = true
+#reuse_evidence = true
+#project = "weekly"
+
+# Branding labels: `name` prefixes default report titles ("Name: question").
+#[branding]
+#name = "Acme Research"
+#primary_color = "#4a6fa5"
+#footer = "Internal use only"

@@ -1,0 +1,84 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 406 >>
+stream
+BT
+/F1 14 Tf
+20 TL
+72 720 Td
+(Agentic Research Pipelines: A Sample Paper) Tj
+T*
+(A. Author, B. Author ó Agletras Research \(fictional sample\)) Tj
+T*
+() Tj
+T*
+(Abstract) Tj
+T*
+(This sample PDF exists to verify the agletras-mcp extract_pdf tool.) Tj
+T*
+(It contains distinctive markers: AGLETRAS_SAMPLE_2026 and PDF_OK_TOKEN.) Tj
+T*
+() Tj
+T*
+(Keywords: agentic research, MCP, zero-cost tooling, Linux) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 377 >>
+stream
+BT
+/F1 14 Tf
+20 TL
+72 720 Td
+(1. Introduction) Tj
+T*
+(The built-in web search backend was unavailable during Phase 0 auditing,) Tj
+T*
+(so retrieval targets explicit URLs and locally provided documents.) Tj
+T*
+(AGLETRAS_SAMPLE_2026 appears on this page as a second-page marker.) Tj
+T*
+() Tj
+T*
+(2. Conclusion) Tj
+T*
+(PDF text extraction is verified end to end with pypdf.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Title (Agentic Research Pipelines: A Sample Paper) /Author (A. Author, B. Author ó Agletras Research \(fictional sample\)) /Subject (Sample PDF for agletras-mcp verification) /Creator (agletras-mcp sample generator) >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000710 00000 n 
+0000000836 00000 n 
+0000001264 00000 n 
+0000001361 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R /Info 8 0 R >>
+startxref
+1599
+%%EOF

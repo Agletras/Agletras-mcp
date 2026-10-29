@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+  <title id="title">Claim verification outcomes</title>
+  <desc id="desc">A stacked bar and status cards summarize 51 claim outcomes from one research run.</desc>
+  <style>
+    text { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 700; fill: #1f2328; }
+    .subtitle { font-size: 14px; fill: #57606a; }
+    .label { font-size: 13px; fill: #1f2328; }
+    .muted { font-size: 12px; fill: #57606a; }
+    .small { font-size: 11px; fill: #57606a; }
+    .value { font-size: 14px; font-weight: 700; fill: #1f2328; }
+    .big { font-size: 32px; font-weight: 700; fill: #1f2328; }
+    .count { font-size: 20px; font-weight: 700; fill: #1f2328; }
+    .card { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .chip { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+    .grid { stroke: #d0d7de; stroke-width: 1; }
+    .baseline { stroke: #bf8700; stroke-width: 2; stroke-dasharray: 5 5; }
+    .track { fill: none; stroke: #d8dee4; }
+    .blue { fill: #2f81f7; }
+    .green { fill: #2da44e; }
+    .purple { fill: #8250df; }
+    .amber { fill: #bf8700; }
+    .red { fill: #cf222e; }
+    .gray { fill: #8b949e; }
+    .ring-blue { fill: none; stroke: #2f81f7; }
+    .ring-green { fill: none; stroke: #2da44e; }
+    @media (prefers-color-scheme: dark) {
+      .title, .label, .value, .big, .count { fill: #e6edf3; }
+      .subtitle, .muted, .small { fill: #8b949e; }
+      .card { fill: #161b22; stroke: #30363d; }
+      .chip { fill: #0d1117; stroke: #30363d; }
+      .grid { stroke: #30363d; }
+      .track { stroke: #30363d; }
+    }
+</style>
+  <rect class="card" x="1" y="1" width="958" height="498" rx="16"/>
+<text x="40" y="50" class="title" text-anchor="start">Claim verification outcomes</text>
+<text x="40" y="78" class="subtitle" text-anchor="start">One research run · 51 claims · deterministic checks over exact stored passages</text>
+<defs><clipPath id="barclip"><rect x="40" y="120" width="880" height="55" rx="12"/></clipPath></defs>
+<rect class="green" x="40.00" y="120" width="396.86" height="55" clip-path="url(#barclip)"/>
+<text x="238.431" y="153" class="value" text-anchor="middle" fill="#ffffff">23 supported</text>
+<rect class="amber" x="436.86" y="120" width="362.35" height="55" clip-path="url(#barclip)"/>
+<text x="618.039" y="153" class="value" text-anchor="middle" fill="#ffffff">21 partially supported</text>
+<rect class="red" x="799.22" y="120" width="69.02" height="55" clip-path="url(#barclip)"/>
+<text x="833.725" y="153" class="value" text-anchor="middle" fill="#ffffff">4</text>
+<rect class="purple" x="868.24" y="120" width="51.76" height="55" clip-path="url(#barclip)"/>
+<text x="894.118" y="153" class="value" text-anchor="middle" fill="#ffffff">3</text>
+<rect class="green" x="40" y="201" width="10" height="10" rx="2"/>
+<text x="58" y="210" class="small" text-anchor="start">Supported — 23</text>
+<rect class="amber" x="280" y="201" width="10" height="10" rx="2"/>
+<text x="298" y="210" class="small" text-anchor="start">Partially supported — 21</text>
+<rect class="red" x="570" y="201" width="10" height="10" rx="2"/>
+<text x="588" y="210" class="small" text-anchor="start">Contradicted — 4</text>
+<rect class="purple" x="770" y="201" width="10" height="10" rx="2"/>
+<text x="788" y="210" class="small" text-anchor="start">Conflicting — 3</text>
+<rect class="chip" x="40" y="244" width="420" height="52" rx="10"/>
+<rect class="green" x="40" y="244" width="5" height="52" rx="2"/>
+<text x="58" y="266" class="label" text-anchor="start">Supported</text>
+<text x="58" y="283" class="small" text-anchor="start">Directly supported by exact passages</text>
+<text x="442" y="277" class="count" text-anchor="end">23</text>
+<rect class="chip" x="500" y="244" width="420" height="52" rx="10"/>
+<rect class="amber" x="500" y="244" width="5" height="52" rx="2"/>
+<text x="518" y="266" class="label" text-anchor="start">Partially supported</text>
+<text x="518" y="283" class="small" text-anchor="start">Covered, but not fully established</text>
+<text x="902" y="277" class="count" text-anchor="end">21</text>
+<rect class="chip" x="40" y="306" width="420" height="52" rx="10"/>
+<rect class="red" x="40" y="306" width="5" height="52" rx="2"/>
+<text x="58" y="328" class="label" text-anchor="start">Contradicted</text>
+<text x="58" y="345" class="small" text-anchor="start">Stored evidence disagrees</text>
+<text x="442" y="339" class="count" text-anchor="end">4</text>
+<rect class="chip" x="500" y="306" width="420" height="52" rx="10"/>
+<rect class="purple" x="500" y="306" width="5" height="52" rx="2"/>
+<text x="518" y="328" class="label" text-anchor="start">Conflicting evidence</text>
+<text x="518" y="345" class="small" text-anchor="start">Independent sources disagree</text>
+<text x="902" y="339" class="count" text-anchor="end">3</text>
+<rect class="chip" x="40" y="368" width="420" height="52" rx="10"/>
+<rect class="gray" x="40" y="368" width="5" height="52" rx="2"/>
+<text x="58" y="390" class="label" text-anchor="start">Unsupported</text>
+<text x="58" y="407" class="small" text-anchor="start">No supporting passage found</text>
+<text x="442" y="401" class="count" text-anchor="end">0</text>
+<rect class="chip" x="500" y="368" width="420" height="52" rx="10"/>
+<rect class="gray" x="500" y="368" width="5" height="52" rx="2"/>
+<text x="518" y="390" class="label" text-anchor="start">Unverifiable</text>
+<text x="518" y="407" class="small" text-anchor="start">Evidence cannot settle the claim</text>
+<text x="902" y="401" class="count" text-anchor="end">0</text>
+<text x="40" y="470" class="small" text-anchor="start">Statuses are evidence-relative labels, not truth probabilities. Contradictions and conflicts are never auto-resolved.</text>
+<text x="40" y="486" class="small" text-anchor="start">The supported total includes one claim supported through citation relations without a separate verification record.</text>
+</svg>

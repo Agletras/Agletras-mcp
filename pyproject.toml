@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agletras-mcp"
+version = "0.2.0"
+description = "Zero-cost research MCP server and CLI for OpenCode: web search, web retrieval (SSRF-guarded), PDF extraction, evidence/citation tracking, resumable runs, and report export."
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.3,<3",
+    "pypdf>=6.21,<7",
+]
+
+[project.scripts]
+agletras = "agletras_mcp.cli:main"
+agletras-mcp = "agletras_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

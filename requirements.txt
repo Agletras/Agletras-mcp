@@ -1,0 +1,6 @@
+# Pinned runtime dependencies for the agletras-mcp server.
+# Transitive dependencies are resolved by pip; keep these in sync with pyproject.toml.
+#
+# Tested on: Python 3.14.8 (Linux), 2026-10-17
+mcp==2.3.0
+pypdf==6.21.1
