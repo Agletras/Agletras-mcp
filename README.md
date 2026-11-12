@@ -414,5 +414,5 @@ The test suite is **hermetic**: temporary home directories, local HTTP servers o
 ---
 
 <p align="center">
-  <sub>Built for research that can show its work.</sub>
+  <sub>Built for researchs that can show its works.</sub>
 </p>
